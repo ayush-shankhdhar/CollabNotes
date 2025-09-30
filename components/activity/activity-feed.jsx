@@ -9,7 +9,7 @@ import Link from "next/link"
 
 export function ActivityFeed() {
   // TODO: Load activities from Supabase
-  const activities: Activity[] = [
+  const activities = [
     {
       id: "1",
       type: "updated",
@@ -42,7 +42,7 @@ export function ActivityFeed() {
     },
   ]
 
-  const getActivityIcon = (type: Activity["type"]) => {
+  const getActivityIcon = (type) => {
     switch (type) {
       case "created":
         return <FileText className="h-4 w-4" />
@@ -55,7 +55,7 @@ export function ActivityFeed() {
     }
   }
 
-  const getActivityText = (activity: Activity) => {
+  const getActivityText = (activity) => {
     const targetLink = (
       <Link
         href={
